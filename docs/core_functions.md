@@ -32,7 +32,7 @@ A view at `destination_view_ref` with the data in the `source_ref` table or view
 | New Column | Value | Description |
 |:-- |:-- |:-- |
 |`duplicate_label`| `unique` | Row is unique for column values defined in `unique_identifiers` |
-|`duplicate_label`| `duplicate` |  |  |
+|`duplicate_label`| `duplicate` | Row is duplicated for column values defined in `unique_identifiers` |
 
 ###`deduplicate`
 ###`replace_substrings`
