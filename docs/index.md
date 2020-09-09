@@ -1,16 +1,15 @@
-# Overview
-This is a test, please tell me it works!
+# Welcome
+##Summary
+Datafunctions is a library of stored procedures for Google BigQuery, which abstract common data manipulation patterns into simple atomic, composable actions.
 
-## Commands
+They can be used for single step transformations, extended and chained together into more complex sequential transformation pipelines.  
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Datafunctions are written in Dynamic SQL and executed entirely within BigQuery.
 
-## Project layout
+##Status
+Datafunctions are currently in active development, with core functions being extended and tested, and additional profiling, monitoring and QA funtionality being built into the library. 
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+The library is currently in private beta.  To request access, please click the button below and fill out a very quick form:
+
+[Request Access :fontawesome-solid-paper-plane:](https://forms.gle/xWc3fZk8aY4PezzT6){: .md-button .md-button--primary }
+

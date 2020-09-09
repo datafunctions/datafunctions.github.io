@@ -1,6 +1,30 @@
 site_name: datafunctions
+
 theme:
   name: material
   #logo: images/superhero_logo.png
   #favicon: images/superhero_logo.png
+
+nav:
+  - 'index.md'
+  - 'core_functions.md'
+  - 'advanced_functions.md'
+
+google_analytics:
+  - UA-119865580-4
+  - auto
+
+extra:
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:info@beepbeep.technology
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
