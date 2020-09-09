@@ -1,3 +1,6 @@
 site_name: datafunctions
 theme:
   name: material
+  logo: images/superhero_logo.png
+  favicon: images/superhero_logo.png
+
