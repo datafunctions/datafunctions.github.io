@@ -3,7 +3,7 @@ These functions are discrete, composable data manipulation actions.
 
 They are grouped into similar function sets and are called using the following syntax:
 
-    datafunctions.function_set.function_name(parameters)
+    datafunctions.function_set.function_name(arguments)
     
 ##`datafunctions.cleanse`
 ###`label_duplicate_rows`
@@ -12,23 +12,27 @@ They are grouped into similar function sets and are called using the following s
 CALL datafunctions.cleanse.label_duplicate_rows (source_ref, destination_view_ref, unique_identifiers)
 ```
 
-| Parameter | Type | In/Out | Description |
-|:-- |:-- |:-- |:-- | 
-|`source_ref`| `STRING` | `IN` |Source table or view reference |
-|`destination_view_ref`| `STRING` | `IN` | Destination view reference |  |
-|`unique_identifiers`| `ARRAY<STRING>` | `IN` | Array of column names with expected unique field combination |
+| Argument | Type | Description |
+|:-- |:-- |:-- |
+|`source_ref`| `STRING` | `IN` Source table or view reference |
+|`destination_view_ref`| `STRING` | `IN` Destination view reference |  |
+|`unique_identifiers`| `ARRAY<STRING>` | `IN` Column names with expected unique field combination |
 
 **Execution:**
 ``` SQL
 CALL datafunctions.cleanse.label_duplicate_rows (
 'datafunctions.zoo.elephants_duplicates',
 'datafunctions.zoo_sandbox.elephants_duplicates_labeled',
-['animal','name','year']
-)
+['animal','name','year'])
 ```
 **Output:**
 
-A view with the original data and an additional field `duplicate_label` which will be `unique` if the combination of columns defined in the `unique_identifiers` attribute are unique for each specific row, or `duplicate` if the combination of values is not unique.
+A view at `destination_view_ref` with the data in the `source_ref` table or view, and an additional field `duplicate_label`:
+
+| New Column | Value | Description |
+|:-- |:-- |:-- |
+|`duplicate_label`| `unique` | Row is unique for column values defined in `unique_identifiers` |
+|`duplicate_label`| `duplicate` |  |  |
 
 ###`deduplicate`
 ###`replace_substrings`
@@ -77,10 +81,10 @@ A view with the original data and an additional field `duplicate_label` which wi
 ###`unpivot`
     source_ref STRING, destination_view STRING, dimensions ARRAY<STRING>, unpivot_columns ARRAY<STRING>
 
-###`join`
+###`left_join`
     source_ref_left STRING, source_ref_right STRING, destination_view STRING, left_join_fields ARRAY<STRING>, right_join_fields ARRAY<STRING>
 
-###`safe_join`
+###`safe_left_join`
     source_ref_left STRING, source_ref_right STRING, destination_view STRING, left_join_fields ARRAY<STRING>, right_join_fields ARRAY<STRING>
 
 ##`datafunctions.utilities`
