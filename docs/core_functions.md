@@ -9,7 +9,7 @@ They are grouped into similar function sets and are called using the following s
 ###`label_duplicate_rows`
 
 ``` SQL
-CALL datafunctions.cleanse.label_duplicate_rows (source_ref, destination_view_ref, unique_identifiers)
+CALL datafunctions.cleanse.label_duplicate_rows (source_ref STRING, destination_view_ref STRING, unique_identifiers ARRAY<STRING>)
 ```
 
 | Argument | Type | Description |
@@ -72,7 +72,7 @@ A view at `destination_view_ref` with the data in the `source_ref` table or view
     source_ref STRING, destination_view_ref STRING, columns_sql ARRAY<STRING>, custom_columns_sql ARRAY<STRING>, where_sql ARRAY<STRING>
 
 ###`sql`
-    source_ref STRING, destination_view_ref STRING, select_line STRING, columns_sql ARRAY<STRING>, except_sql ARRAY<STRING>, replace_sql ARRAY<STRING>, custom_columns_sql ARRAY<STRING>, where_sql ARRAY<STRING>, groupby_sql ARRAY<STRING>
+    CALL datafunctions.select.sql (source_ref STRING, destination_view_ref STRING, select_line STRING, columns_sql ARRAY<STRING>, except_sql ARRAY<STRING>, replace_sql ARRAY<STRING>, custom_columns_sql ARRAY<STRING>, where_sql ARRAY<STRING>, groupby_sql ARRAY<STRING>)
 
 ##`datafunctions.transform`
 ###`pivot`
