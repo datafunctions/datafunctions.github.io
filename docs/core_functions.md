@@ -7,24 +7,21 @@ They are grouped into similar function sets and are called using the following s
     
 ##`datafunctions.cleanse`
 ###`label_duplicate_rows`
-
-``` SQL
-CALL datafunctions.cleanse.label_duplicate_rows (source_ref STRING, destination_view_ref STRING, unique_identifiers ARRAY<STRING>)
-```
-
 | Argument | Type | Description |
 |:-- |:-- |:-- |
 |`source_ref`| `STRING` | `IN` Source table or view reference |
 |`destination_view_ref`| `STRING` | `IN` Destination view reference |  |
 |`unique_identifiers`| `ARRAY<STRING>` | `IN` Column names with expected unique field combination |
 
-**Execution:**
+
 ``` SQL
 CALL datafunctions.cleanse.label_duplicate_rows (
-'datafunctions.zoo.elephants_duplicates',
-'datafunctions.zoo_sandbox.elephants_duplicates_labeled',
-['animal','name','year'])
+'project_id.dataset_id.source_name', #source_ref STRING
+'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
+[] #unique_identifiers ARRAY<STRING>
+);
 ```
+
 **Output:**
 
 A view at `destination_view_ref` with the data in the `source_ref` table or view, and an additional field `duplicate_label`:
@@ -65,6 +62,18 @@ A view at `destination_view_ref` with the data in the `source_ref` table or view
 ###`all_except`
     source_ref STRING, destination_view_ref STRING, except_sql ARRAY<STRING>, where_sql ARRAY<STRING>
 
+###`all_except_where`
+
+###`all_where`
+```SQL
+CALL datafunctions.select.all_where (
+'project_id.dataset_id.source_name', #source_ref STRING
+'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
+[] #where_sql ARRAY<STRING>
+);
+```
+
+
 ###`columns_where`
     source_ref STRING, destination_view_ref STRING, columns_sql ARRAY<STRING>, where_sql ARRAY<STRING>
 
@@ -72,10 +81,33 @@ A view at `destination_view_ref` with the data in the `source_ref` table or view
     source_ref STRING, destination_view_ref STRING, columns_sql ARRAY<STRING>, custom_columns_sql ARRAY<STRING>, where_sql ARRAY<STRING>
 
 ###`sql`
-    CALL datafunctions.select.sql (source_ref STRING, destination_view_ref STRING, select_line STRING, columns_sql ARRAY<STRING>, except_sql ARRAY<STRING>, replace_sql ARRAY<STRING>, custom_columns_sql ARRAY<STRING>, where_sql ARRAY<STRING>, groupby_sql ARRAY<STRING>)
+``` SQL 
+CALL datafunctions.select.sql (
+'project_id.dataset_id.source_name', #source_ref STRING
+'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
+'', #select_line STRING
+[], #columns_sql ARRAY<STRING>
+[], #except_sql ARRAY<STRING>
+[], #replace_sql ARRAY<STRING>
+[], #custom_columns_sql ARRAY<STRING>
+[], #where_sql ARRAY<STRING>
+[]  #groupby_sql ARRAY<STRING>
+);
+```
 
 ##`datafunctions.transform`
 ###`pivot`
+```
+CALL datafunctions.transform.pivot (
+'project_id.dataset_id.source_name', #source_ref STRING
+'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
+[], #dimensions ARRAY<STRING>, 
+'', #metric STRING, 
+'', #pivot_field STRING
+'_' #new_column_name_delimiter STRING
+);
+```
+
     source_ref STRING, destination_view_ref STRING, dimensions ARRAY<STRING>, metric STRING, pivot_field STRING, column_naming_format ARRAY<STRING>
 
 ###`unpivot`
@@ -91,16 +123,27 @@ A view at `destination_view_ref` with the data in the `source_ref` table or view
 ###`get_columns`
     source_ref STRING, OUT columns_out ARRAY<STRING>
 
+###`get_min_or_max_column_value`
+``` SQL
+CALL datafunctions.utilities.get_min_or_max_column_value ( 
+'', #source_ref STRING
+'', #column_name STRING
+'MIN/MAX', #min_or_max STRING
+VARIABLE, #OUT min_max_value ANY TYPE
+'STRING/DATE/INT64/ETC' #output_type STRING
+);
+```
+
 ###`get_unique_column_values`
     source_ref STRING, column_name STRING, OUT column_values ARRAY<STRING>
 
-###`row_hash_columns_md5`
+###`add_row_hash_columns_md5`
     source_ref STRING, destination_view_ref STRING, include_columns ARRAY<STRING>, row_hash_name STRING
     
-###`row_hash_md5`
+###`add_row_hash_md5`
     source_ref STRING, destination_view_ref STRING, row_hash_name STRING
 
-###`generate_day_array`
+###`build_gapless_day_array`
     source_ref STRING, day_column STRING, OUT day_array ARRAY<DATE>
 
 
