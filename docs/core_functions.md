@@ -96,8 +96,17 @@ CALL datafunctions.select.sql (
 ```
 
 ##`datafunctions.transform`
-###`pivot`
+###`fill_in_date_gaps`
+``` SQL
+CALL datafunctions.transform.fill_in_date_gaps (
+'project_id.dataset_id.source_name', #source_ref STRING
+'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
+'' #date_column STRING
+);
 ```
+
+###`pivot`
+``` SQL
 CALL datafunctions.transform.pivot (
 'project_id.dataset_id.source_name', #source_ref STRING
 'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
@@ -108,7 +117,7 @@ CALL datafunctions.transform.pivot (
 );
 ```
 
-    source_ref STRING, destination_view_ref STRING, dimensions ARRAY<STRING>, metric STRING, pivot_field STRING, column_naming_format ARRAY<STRING>
+
 
 ###`unpivot`
     source_ref STRING, destination_view STRING, dimensions ARRAY<STRING>, unpivot_columns ARRAY<STRING>

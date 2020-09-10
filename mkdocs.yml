@@ -10,6 +10,8 @@ nav:
   - 'core_functions.md'
   - 'advanced_functions.md'
 
+repo_url: https://github.com/datafunctions/datafunctions.github.io
+
 google_analytics:
   - UA-119865580-4
   - auto
