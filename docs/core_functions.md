@@ -1,12 +1,12 @@
-#Core Functions
+# Core Functions
 These functions are discrete, composable data manipulation actions.
 
 They are grouped into similar function sets and are called using the following syntax:
 
     datafunctions.function_set.function_name(arguments)
     
-##`datafunctions.cleanse`
-###`label_duplicate_rows`
+## `datafunctions.cleanse`
+### `label_duplicate_rows`
 | Argument | Type | Description |
 |:-- |:-- |:-- |
 |`source_ref`| `STRING` | `IN` Source table or view reference |
@@ -154,5 +154,3 @@ VARIABLE, #OUT min_max_value ANY TYPE
 
 ###`build_gapless_day_array`
     source_ref STRING, day_column STRING, OUT day_array ARRAY<DATE>
-
-
