@@ -1,0 +1,1068 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/superhero_logo.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Core Functions - datafunctions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-119865580-4","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="datafunctions" class="md-header-nav__button md-logo" aria-label="datafunctions">
+      
+  <img src="../assets/images/superhero_logo_white.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            datafunctions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Core Functions
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/datafunctions/datafunctions.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="datafunctions" class="md-nav__button md-logo" aria-label="datafunctions">
+      
+  <img src="../assets/images/superhero_logo_white.png" alt="logo">
+
+    </a>
+    datafunctions
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/datafunctions/datafunctions.github.io/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Core Functions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Core Functions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionscleanse" class="md-nav__link">
+    datafunctions.cleanse
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.cleanse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#label_duplicate_rows" class="md-nav__link">
+    label_duplicate_rows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deduplicate" class="md-nav__link">
+    deduplicate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace_substrings" class="md-nav__link">
+    replace_substrings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionscompute" class="md-nav__link">
+    datafunctions.compute
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.compute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cumulative_sum" class="md-nav__link">
+    cumulative_sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily_moving_average" class="md-nav__link">
+    daily_moving_average
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionsprofile" class="md-nav__link">
+    datafunctions.profile
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count_column_empty_values" class="md-nav__link">
+    count_column_empty_values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count_column_null_values" class="md-nav__link">
+    count_column_null_values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_column_cardinality" class="md-nav__link">
+    get_column_cardinality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_data_shape" class="md-nav__link">
+    get_data_shape
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionsselect" class="md-nav__link">
+    datafunctions.select
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.select">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all_except" class="md-nav__link">
+    all_except
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all_except_where" class="md-nav__link">
+    all_except_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all_where" class="md-nav__link">
+    all_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columns_where" class="md-nav__link">
+    columns_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom_where" class="md-nav__link">
+    custom_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    sql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionstransform" class="md-nav__link">
+    datafunctions.transform
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fill_in_date_gaps" class="md-nav__link">
+    fill_in_date_gaps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot" class="md-nav__link">
+    pivot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpivot" class="md-nav__link">
+    unpivot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left_join" class="md-nav__link">
+    left_join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe_left_join" class="md-nav__link">
+    safe_left_join
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionsutilities" class="md-nav__link">
+    datafunctions.utilities
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_columns" class="md-nav__link">
+    get_columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_min_or_max_column_value" class="md-nav__link">
+    get_min_or_max_column_value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_unique_column_values" class="md-nav__link">
+    get_unique_column_values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_row_hash_columns_md5" class="md-nav__link">
+    add_row_hash_columns_md5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_row_hash_md5" class="md-nav__link">
+    add_row_hash_md5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build_gapless_day_array" class="md-nav__link">
+    build_gapless_day_array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionscleanse" class="md-nav__link">
+    datafunctions.cleanse
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.cleanse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#label_duplicate_rows" class="md-nav__link">
+    label_duplicate_rows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deduplicate" class="md-nav__link">
+    deduplicate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace_substrings" class="md-nav__link">
+    replace_substrings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionscompute" class="md-nav__link">
+    datafunctions.compute
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.compute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cumulative_sum" class="md-nav__link">
+    cumulative_sum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daily_moving_average" class="md-nav__link">
+    daily_moving_average
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionsprofile" class="md-nav__link">
+    datafunctions.profile
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count_column_empty_values" class="md-nav__link">
+    count_column_empty_values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count_column_null_values" class="md-nav__link">
+    count_column_null_values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_column_cardinality" class="md-nav__link">
+    get_column_cardinality
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_data_shape" class="md-nav__link">
+    get_data_shape
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionsselect" class="md-nav__link">
+    datafunctions.select
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.select">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    all
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all_except" class="md-nav__link">
+    all_except
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all_except_where" class="md-nav__link">
+    all_except_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all_where" class="md-nav__link">
+    all_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columns_where" class="md-nav__link">
+    columns_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom_where" class="md-nav__link">
+    custom_where
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    sql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionstransform" class="md-nav__link">
+    datafunctions.transform
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fill_in_date_gaps" class="md-nav__link">
+    fill_in_date_gaps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot" class="md-nav__link">
+    pivot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpivot" class="md-nav__link">
+    unpivot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#left_join" class="md-nav__link">
+    left_join
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe_left_join" class="md-nav__link">
+    safe_left_join
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datafunctionsutilities" class="md-nav__link">
+    datafunctions.utilities
+  </a>
+  
+    <nav class="md-nav" aria-label="datafunctions.utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_columns" class="md-nav__link">
+    get_columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_min_or_max_column_value" class="md-nav__link">
+    get_min_or_max_column_value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_unique_column_values" class="md-nav__link">
+    get_unique_column_values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_row_hash_columns_md5" class="md-nav__link">
+    add_row_hash_columns_md5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_row_hash_md5" class="md-nav__link">
+    add_row_hash_md5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build_gapless_day_array" class="md-nav__link">
+    build_gapless_day_array
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/datafunctions/datafunctions.github.io/edit/master/docs/core_functions.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="core-functions">Core Functions</h1>
+<p>These functions are discrete, composable data manipulation actions.</p>
+<p>They are grouped into similar function sets and are called using the following syntax:</p>
+<div class="highlight"><pre><span></span><code>datafunctions.function_set.function_name(arguments)
+</code></pre></div>
+<h2 id="datafunctionscleanse"><code>datafunctions.cleanse</code></h2>
+<h3 id="label_duplicate_rows"><code>label_duplicate_rows</code></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>source_ref</code></td>
+<td align="left"><code>STRING</code></td>
+<td align="left"><code>IN</code> Source table or view reference</td>
+</tr>
+<tr>
+<td align="left"><code>destination_view_ref</code></td>
+<td align="left"><code>STRING</code></td>
+<td align="left"><code>IN</code> Destination view reference</td>
+</tr>
+<tr>
+<td align="left"><code>unique_identifiers</code></td>
+<td align="left"><code>ARRAY&lt;STRING&gt;</code></td>
+<td align="left"><code>IN</code> Column names with expected unique field combination</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="n">cleanse</span><span class="p">.</span><span class="n">label_duplicate_rows</span> <span class="p">(</span>
+<span class="s1">&#39;project_id.dataset_id.source_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;project_id.dataset_id.destination_view_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">destination_view_ref</span> <span class="n">STRING</span>
+<span class="p">[]</span> <span class="o">#</span><span class="n">unique_identifiers</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<p><strong>Output:</strong></p>
+<p>A view at <code>destination_view_ref</code> with the data in the <code>source_ref</code> table or view, and an additional field <code>duplicate_label</code>:</p>
+<table>
+<thead>
+<tr>
+<th align="left">New Column</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>duplicate_label</code></td>
+<td align="left"><code>unique</code></td>
+<td align="left">Row is unique for column values defined in <code>unique_identifiers</code></td>
+</tr>
+<tr>
+<td align="left"><code>duplicate_label</code></td>
+<td align="left"><code>duplicate</code></td>
+<td align="left">Row is duplicated for column values defined in <code>unique_identifiers</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="deduplicate"><code>deduplicate</code></h3>
+<h3 id="replace_substrings"><code>replace_substrings</code></h3>
+<div class="highlight"><pre><span></span><code>input_string STRING, replace_substring_rules ARRAY&lt;STRUCT&lt;substring STRING, replacement STRING&gt;&gt;, OUT output_string STRING
+</code></pre></div>
+<h2 id="datafunctionscompute"><code>datafunctions.compute</code></h2>
+<h3 id="cumulative_sum"><code>cumulative_sum</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING, value_column STRING, partition_columns ARRAY&lt;STRING&gt;, sort_columns ARRAY&lt;STRING&gt;, cumulative_field_name STRING
+</code></pre></div>
+<h3 id="daily_moving_average"><code>daily_moving_average</code></h3>
+<p><div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="n">compute</span><span class="p">.</span><span class="n">daily_moving_average</span> <span class="p">(</span>
+<span class="s1">&#39;project_id.dataset_id.source_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;project_id.dataset_id.destination_view_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">destination_view_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">value_column</span> <span class="n">STRING</span> 
+<span class="p">[],</span> <span class="o">#</span><span class="n">partition_columns</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">sort_columns</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="s1">&#39;ASC/DESC&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">asc_or_desc</span> <span class="n">STRING</span>
+<span class="mi">7</span> <span class="o">#</span><span class="n">moving_average_days</span> <span class="n">INT64</span>
+<span class="p">);</span>
+</code></pre></div>
+    source_ref STRING, destination_view_ref STRING, value_column STRING, partition_columns ARRAY<STRING>, sort_columns ARRAY<STRING>, moving_average_days INT64</p>
+<h2 id="datafunctionsprofile"><code>datafunctions.profile</code></h2>
+<h3 id="count_column_empty_values"><code>count_column_empty_values</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, column_name STRING, OUT empty_column_summary STRUCT&lt;row_count INT64, empty_record_count INT64, empty_record_ratio FLOAT64&gt;
+</code></pre></div>
+<h3 id="count_column_null_values"><code>count_column_null_values</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, column_name STRING, OUT column_null_summary STRUCT&lt;row_count INT64, null_record_count INT64, null_record_ratio FLOAT64&gt;
+</code></pre></div>
+<h3 id="get_column_cardinality"><code>get_column_cardinality</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, column_name STRING, OUT column_cardinality INT64
+</code></pre></div>
+<h3 id="get_data_shape"><code>get_data_shape</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, OUT data_shape STRUCT&lt;column_count INT64, row_count INT64&gt;
+</code></pre></div>
+<h2 id="datafunctionsselect"><code>datafunctions.select</code></h2>
+<h3 id="all"><code>all</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING
+</code></pre></div>
+<h3 id="all_except"><code>all_except</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING, except_sql ARRAY&lt;STRING&gt;, where_sql ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="all_except_where"><code>all_except_where</code></h3>
+<h3 id="all_where"><code>all_where</code></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="k">select</span><span class="p">.</span><span class="n">all_where</span> <span class="p">(</span>
+<span class="s1">&#39;project_id.dataset_id.source_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;project_id.dataset_id.destination_view_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">destination_view_ref</span> <span class="n">STRING</span>
+<span class="p">[]</span> <span class="o">#</span><span class="n">where_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="columns_where"><code>columns_where</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING, columns_sql ARRAY&lt;STRING&gt;, where_sql ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="custom_where"><code>custom_where</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING, columns_sql ARRAY&lt;STRING&gt;, custom_columns_sql ARRAY&lt;STRING&gt;, where_sql ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="sql"><code>sql</code></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="k">select</span><span class="p">.</span><span class="k">sql</span> <span class="p">(</span>
+<span class="s1">&#39;project_id.dataset_id.source_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;project_id.dataset_id.destination_view_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">destination_view_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">select_line</span> <span class="n">STRING</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">columns_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">except_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">replace_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">custom_columns_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">where_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">[]</span>  <span class="o">#</span><span class="n">groupby_sql</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span>
+<span class="p">);</span>
+</code></pre></div>
+<h2 id="datafunctionstransform"><code>datafunctions.transform</code></h2>
+<h3 id="fill_in_date_gaps"><code>fill_in_date_gaps</code></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="k">transform</span><span class="p">.</span><span class="n">fill_in_date_gaps</span> <span class="p">(</span>
+<span class="s1">&#39;project_id.dataset_id.source_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;project_id.dataset_id.destination_view_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">destination_view_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;&#39;</span> <span class="o">#</span><span class="n">date_column</span> <span class="n">STRING</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="pivot"><code>pivot</code></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="k">transform</span><span class="p">.</span><span class="n">pivot</span> <span class="p">(</span>
+<span class="s1">&#39;project_id.dataset_id.source_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;project_id.dataset_id.destination_view_name&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">destination_view_ref</span> <span class="n">STRING</span>
+<span class="p">[],</span> <span class="o">#</span><span class="n">dimensions</span> <span class="nb">ARRAY</span><span class="o">&lt;</span><span class="n">STRING</span><span class="o">&gt;</span><span class="p">,</span> 
+<span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">metric</span> <span class="n">STRING</span><span class="p">,</span> 
+<span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">pivot_field</span> <span class="n">STRING</span>
+<span class="s1">&#39;_&#39;</span> <span class="o">#</span><span class="n">new_column_name_delimiter</span> <span class="n">STRING</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="unpivot"><code>unpivot</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view STRING, dimensions ARRAY&lt;STRING&gt;, unpivot_columns ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="left_join"><code>left_join</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref_left STRING, source_ref_right STRING, destination_view STRING, left_join_fields ARRAY&lt;STRING&gt;, right_join_fields ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="safe_left_join"><code>safe_left_join</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref_left STRING, source_ref_right STRING, destination_view STRING, left_join_fields ARRAY&lt;STRING&gt;, right_join_fields ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h2 id="datafunctionsutilities"><code>datafunctions.utilities</code></h2>
+<h3 id="get_columns"><code>get_columns</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, OUT columns_out ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="get_min_or_max_column_value"><code>get_min_or_max_column_value</code></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CALL</span> <span class="n">datafunctions</span><span class="p">.</span><span class="n">utilities</span><span class="p">.</span><span class="n">get_min_or_max_column_value</span> <span class="p">(</span> 
+<span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">source_ref</span> <span class="n">STRING</span>
+<span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">#</span><span class="k">column_name</span> <span class="n">STRING</span>
+<span class="s1">&#39;MIN/MAX&#39;</span><span class="p">,</span> <span class="o">#</span><span class="n">min_or_max</span> <span class="n">STRING</span>
+<span class="k">VARIABLE</span><span class="p">,</span> <span class="o">#</span><span class="k">OUT</span> <span class="n">min_max_value</span> <span class="k">ANY</span> <span class="k">TYPE</span>
+<span class="s1">&#39;STRING/DATE/INT64/ETC&#39;</span> <span class="o">#</span><span class="n">output_type</span> <span class="n">STRING</span>
+<span class="p">);</span>
+</code></pre></div>
+<h3 id="get_unique_column_values"><code>get_unique_column_values</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, column_name STRING, OUT column_values ARRAY&lt;STRING&gt;
+</code></pre></div>
+<h3 id="add_row_hash_columns_md5"><code>add_row_hash_columns_md5</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING, include_columns ARRAY&lt;STRING&gt;, row_hash_name STRING
+</code></pre></div>
+<h3 id="add_row_hash_md5"><code>add_row_hash_md5</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, destination_view_ref STRING, row_hash_name STRING
+</code></pre></div>
+<h3 id="build_gapless_day_array"><code>build_gapless_day_array</code></h3>
+<div class="highlight"><pre><span></span><code>source_ref STRING, day_column STRING, OUT day_array ARRAY&lt;DATE&gt;
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="mailto:info@beepbeep.technology" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
