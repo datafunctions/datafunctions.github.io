@@ -2,13 +2,16 @@ site_name: datafunctions
 
 theme:
   name: material
-  #logo: images/superhero_logo.png
-  #favicon: images/superhero_logo.png
+  logo: assets/images/superhero_logo_white.png
+  favicon: assets/images/superhero_logo.png
 
 nav:
   - 'index.md'
   - 'core_functions.md'
-  - 'advanced_functions.md'
+  # - 'advanced_functions.md'
+  # - 'cloud_functions.md'
+  # - 'python_package.md'
+  # - 'tutorials.md'
 
 repo_url: https://github.com/datafunctions/datafunctions.github.io
 
@@ -31,3 +34,5 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+  - pymdownx.tabbed
+  - pymdownx.superfences

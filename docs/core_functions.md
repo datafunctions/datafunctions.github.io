@@ -39,7 +39,18 @@ A view at `destination_view_ref` with the data in the `source_ref` table or view
 ###`cumulative_sum`
     source_ref STRING, destination_view_ref STRING, value_column STRING, partition_columns ARRAY<STRING>, sort_columns ARRAY<STRING>, cumulative_field_name STRING
 
-###`moving_average`
+###`daily_moving_average`
+```SQL
+CALL datafunctions.compute.daily_moving_average (
+'project_id.dataset_id.source_name', #source_ref STRING
+'project_id.dataset_id.destination_view_name', #destination_view_ref STRING
+'', #value_column STRING 
+[], #partition_columns ARRAY<STRING>
+[], #sort_columns ARRAY<STRING>
+'ASC/DESC', #asc_or_desc STRING
+7 #moving_average_days INT64
+);
+```
     source_ref STRING, destination_view_ref STRING, value_column STRING, partition_columns ARRAY<STRING>, sort_columns ARRAY<STRING>, moving_average_days INT64
 
 ##`datafunctions.profile`

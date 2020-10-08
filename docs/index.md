@@ -7,7 +7,7 @@ They can be used for single step transformations, extended and chained together 
 Datafunctions are written in Dynamic SQL and executed entirely within BigQuery.
 
 ##Status
-Datafunctions are currently in active development, with core functions being extended and tested, and additional profiling, monitoring and QA funtionality being built into the library. 
+Datafunctions are currently in active development, with core functions being extended and tested, and additional profiling, monitoring and QA functionality being developed and built into the library. 
 
 The library is currently in private beta.  To request access, please click the button below and fill out a very quick form:
 

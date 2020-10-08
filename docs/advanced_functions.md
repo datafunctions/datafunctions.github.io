@@ -6,7 +6,7 @@ Advanced functions require more complex configuration, but enable users to lever
 By using a combination of simple or complex chains of datafunctions, scheduled queries, pub/sub triggers and cloud functions, new or backlog data can be augmented with responses from any number of Google or external APIs.
 
 **Example flow:**
-![Example Advanced Function Flow](images/example_advanced_datafunction_flow.png)
+![Example Advanced Function Flow](assets/images/example_advanced_datafunction_flow.png)
 
 ## Google APIs
 
